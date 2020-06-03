@@ -1,24 +1,25 @@
-using System;
-using System.Linq;
 using Harmony;
+using System;
 
 namespace EXILED.Patches
 {
+	[HarmonyPatch(typeof(ReferenceHub), nameof(ReferenceHub.OnDestroy))]
 	public class PlayerLeaveEvent
 	{
-		[HarmonyPatch(typeof(ReferenceHub), "OnDestroy")]
 		public static void Prefix(ReferenceHub __instance)
 		{
 			if (EventPlugin.PlayerLeaveEventPatchDisable)
 				return;
-			
+
+			EventPlugin.ToMultiAdmin("Player disconnect: ");
+
 			try
 			{
-				Events.InvokePlayerLeave(__instance, __instance.characterClassManager.UserId, __instance.gameObject);
+				Events.InvokePlayerLeave(__instance);
 			}
-			catch (Exception e)
+			catch (Exception exception)
 			{
-				Plugin.Error($"Error in PlayerLeave Event: {e}");
+				Log.Error($"PlayerLeaveEvent error: {exception}");
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 # EXILED - EXtended In-runtime Library for External Development
 
+Join our [[Discord](https://discord.gg/PyUkWTg)]!
 
 EXILED is a low-level plugin framework for SCP: Secret Laboratory servers. It offers an event system for developers to hook in order to manipulate or change game code, or implement their own functions.
 All EXILED events are coded with Harmony, meaning they require no direct editing of server Assemblies to function, which allows for two unique benefits.
@@ -26,7 +27,7 @@ If you choose to install EXILED manually:
 
 # Config
 EXILED by itself offers very little in the way of config options, as it, by itself, does nothing.
-The only thing offered is the ``exiled_debug`` value, which should go into your ``config_gameplay.txt`` file. This value is false by default, setting it to true will print additional lines from plugins and EXILED itself to help developers/hosts fix misbehaving code. *Note: This value will not be automatically added to the config_gameplay file, and if you wish to set it to true, you will need to add it to the file yourself.*
+The only thing offered is the ``exiled_debug`` value, which should go into your ``~/.config/EXILED/(ServerPortHere)-config.yml`` file (``%AppData%\EXILED\(ServerPortHere)-config.yml`` on Windows). This value is false by default, setting it to true will print additional lines from plugins and EXILED itself to help developers/hosts fix misbehaving code. *Note: This value will not be automatically added to the config file, and if you wish to set it to true, you will need to add it to the file yourself.*
 
 Plugin configs will ***NOT*** be in the aforementioned ``config_gameplay.txt`` file, instead, plugin configs are set in the ``~/.config/EXILED/(ServerPortHere)-config.yml`` file (``%AppData%\EXILED\(ServerPortHere)-config.yml`` on Windows).
 However, plugins might get their config settings from other locations on their own, this is simply the default EXILED location for them, so refer to the individual plugin if there are issues.
